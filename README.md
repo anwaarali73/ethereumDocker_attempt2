@@ -5,3 +5,12 @@
 * I will be changing the name of my ethereum network as well. As puppeth I think keeps the already generated networks in its memory.
 
 * There was also the issue of imported accounts in metamask, I will be solving that issue this time as well. There must not be any issues ideally as things seemed to work well outside the docker world even with the imported accounts.
+
+* Okay so the importing accounts takes quite long. In order of minutes! So it is bit of a time consuming process. I could create two more accounts so that I have found nodes for a full mesh network setup.
+
+* Through metamsk everything seems to be working okay. I can send funds through metamask from important accounts to the already created account and the other way around is working as well.
+
+* But I can not seem to do the same using the geth console from within the docker containers.
+
+* See if you can find transaction receipts created within the metamask using the geth console.
+* See if you can transfer funds between the imported accounts through geth console
