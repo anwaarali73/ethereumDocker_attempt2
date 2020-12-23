@@ -1,0 +1,9 @@
+FROM ethereum/client-go:alltools-latest
+
+WORKDIR '/node2'
+
+COPY . .
+
+CMD ["geth", "--datadir", "./", "--syncmode", "full", "--port", "30312", "--http", "--http.addr", "0.0.0.0",  "--http.api", "personal,eth,net,web3,txpool,miner,debug", "--http.corsdomain", "*", "--bootnodes", "enode://2f6163ab23d011c0b9b5fe1a3169454ba83f134b2a4281177b51db2962121d2a0928afdb34297c82d54469f2718b45cc63c3a0ebc1832311bab102c43c416f6d@192.18.0.10:30310", "--networkid", "5221", "--gasprice", "1", "-unlock", "0x37a39fc44fdd3559c80202e1bd393fa54e6d321f", "--password", "password.txt", "--mine", "--allow-insecure-unlock"]
+
+EXPOSE 30312

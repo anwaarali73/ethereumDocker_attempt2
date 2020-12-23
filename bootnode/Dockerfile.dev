@@ -1,0 +1,9 @@
+FROM ethereum/client-go:alltools-latest
+
+WORKDIR '/bootnode'
+
+COPY . .
+
+CMD ["bootnode", "-nodekey", "boot.key", "-verbosity", "9", "-addr", ":30310"]
+
+EXPOSE 30310

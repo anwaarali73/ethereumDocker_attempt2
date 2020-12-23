@@ -1,4 +1,4 @@
-# A fresh attempt to a fully functioning dockersied private blockchaininitially with two nodes and a bootnode
+# A fresh attempt to a fully functioning dockersied private blockchain initially with two nodes and a bootnode
 
 * Durin the first attempt everything seemed to working but all of a sudden the mining stopped and I couldn't make transactions among the nodes.
 

@@ -1,0 +1,48 @@
+# In terms of services, it should be able to able to:
+# 1. spin up specified number of nodes with given configuration.
+# 2. Instantiate the bootnode service
+# Make an operational blockchain network out of the above containers
+# At least one of the nodes' port should be exposed to be interactable for
+# metamask
+
+version: '3.3'
+
+networks:
+  blockchain:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.18.0.0/16
+          gateway: 192.18.0.1
+
+services:
+  bootnode:
+    container_name: bootnode
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./bootnode
+    networks:
+      blockchain:
+        ipv4_address: 192.18.0.10 # Fixed IP because all the nodes need to know it in their Dockerfile.dev
+  node1:
+    container_name: node1
+    depends_on:
+      - bootnode
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./node1
+    networks:
+      blockchain:
+        ipv4_address: 192.18.0.15
+    ports:
+      - "8545:8545" # For metamask access
+  node2:
+    container_name: node2
+    depends_on:
+      - bootnode
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./node2
+    networks:
+      - blockchain
