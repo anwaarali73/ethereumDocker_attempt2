@@ -2,7 +2,7 @@ FROM ethereum/client-go:alltools-latest
 
 WORKDIR '/node1'
 
-COPY . .
+#COPY . .
 
 CMD ["geth", "--datadir", "./", "--syncmode", "full", "--port", "30311", "--http", "--http.addr", "0.0.0.0", "--http.api", "personal,eth,net,web3,txpool,miner,debug", "--http.corsdomain", "*",  "--bootnodes", "enode://2f6163ab23d011c0b9b5fe1a3169454ba83f134b2a4281177b51db2962121d2a0928afdb34297c82d54469f2718b45cc63c3a0ebc1832311bab102c43c416f6d@192.18.0.10:30310", "--networkid", "5221", "--miner.gasprice", "1", "-unlock", "0x7265e26ccf2545fff6e82a0752f0742a3486edc4", "--password", "password.txt", "--mine", "--allow-insecure-unlock"]
 

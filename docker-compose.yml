@@ -29,6 +29,8 @@ services:
     container_name: node1
     depends_on:
       - bootnode
+    volumes:
+      - ./node1:/node1
     build:
       dockerfile: Dockerfile.dev
       context: ./node1
@@ -41,6 +43,8 @@ services:
     container_name: node2
     depends_on:
       - bootnode
+    volumes:
+      - ./node2:/node2
     build:
       dockerfile: Dockerfile.dev
       context: ./node2
