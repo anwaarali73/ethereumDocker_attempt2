@@ -14,6 +14,6 @@
 
 - [x] See if you can find transaction receipts created within the metamask using the geth console.
 - [x] See if you can transfer funds between the imported accounts through geth console.
-- [] See if you can transfer funds between imported and generated accounts using geth console.
+- [ ] See if you can transfer funds between imported and generated accounts using geth console.
 
 * Need to see what could be the problem in terms of generated and important account funds transferss using geth console. Networking seems to be working fine. Could be an issue related to rpc or how geth commands are used in general to start the blockchain nodes.
